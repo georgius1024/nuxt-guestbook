@@ -4,20 +4,28 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 ## Setup
 
+Create DB
+```bash
+createdb nuxt_guestbook
+```
+
+```bash
+psql -h localhost -U postgres -d nuxt_guestbook
+```
+
+```bash
+create table guestbook (id char(36) primary key, title varchar(128), author varchar(80), text text,created_at timestamp );
+```
+
+```bash
+insert into guestbook values('123', 'TTT', 'ME', 'NOT NOW', NOW());
+```
+
 Make sure to install the dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
 # yarn
 yarn install
-
-# bun
-bun install
 ```
 
 ## Development Server
